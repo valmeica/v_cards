@@ -1,0 +1,42 @@
+<body>
+	<header>
+		<h1>V-Cards</h1>
+<h5>Keep your business contacts in your hand.</h5>
+
+<%= link_to "Add new post", new_post_path %>
+	</header>
+ 
+	<div id="main">
+		<article>
+			<div class="Row">
+				<div class="Grid">
+					<div class="Grid--1ofX">
+
+<article>
+    <% @array.each do |row| %>
+		<div class="Row">
+			<div class="Grid">
+				<% row.compact.each do |p| %>
+					<div class="Grid--1ofX">
+						<a href="/posts/<%= p.id %>"><%= image_tag p.image.url(:large) %></a>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+
+</article>
+					</div>
+				</div>
+			</div>
+		</article>
+	
+		<aside>
+			Sidebar
+		</aside>
+	</div>
+ 
+	<footer>
+		Footer
+	</footer>
+</body>
